@@ -1,0 +1,24 @@
+# Copy to fly.toml and fill in your values.
+# Create the app first: fly apps create <name> --region fra
+# This app runs on the private network only — no public HTTP endpoint.
+# next-app and ws-server connect to it as: <app-name>.internal:3306
+app = "your-db-app-name"
+primary_region = "fra"
+
+[build]
+  image = "mysql:8.0"
+
+# Set secrets via: fly secrets set -a your-db-app-name
+#   MYSQL_ROOT_PASSWORD=<strong-password>
+#   MYSQL_DATABASE=ephemeral
+#   MYSQL_USER=ephemeral
+#   MYSQL_PASSWORD=<strong-password>
+
+[[mounts]]
+  source      = "mysql_data"
+  destination = "/var/lib/mysql"
+
+[[vm]]
+  memory   = "512mb"
+  cpu_kind = "shared"
+  cpus     = 1

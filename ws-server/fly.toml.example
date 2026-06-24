@@ -1,0 +1,18 @@
+# Copy to fly.toml and fill in your values.
+# Create the app first: fly apps create <name> --region fra
+app = "your-ws-app-name"
+primary_region = "fra"
+
+[build]
+
+[http_service]
+  internal_port = 3001
+  force_https   = true
+  auto_stop_machines  = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory   = "256mb"
+  cpu_kind = "shared"
+  cpus     = 1

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+html {
+  font-size: 20px;
+}
+
+@keyframes shrink-bar {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+@keyframes pulse-bubble {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
