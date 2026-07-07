@@ -20,9 +20,47 @@ const pacifico = Pacifico({
   weight: "400",
 });
 
+const description =
+  "Send messages that leave no trace. End-to-end encrypted, disappear after being read, no phone number required. Open source, hosted in Europe.";
+
 export const metadata: Metadata = {
-  title: "Ephemeral",
-  description: "Messages that disappear.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://sendephemeral.com"),
+  title: {
+    default: "Ephemeral — messages that leave no trace",
+    template: "%s — Ephemeral",
+  },
+  description,
+  applicationName: "Ephemeral",
+  keywords: [
+    "ephemeral messaging",
+    "encrypted messaging",
+    "disappearing messages",
+    "private messenger",
+    "end-to-end encryption",
+    "EU messaging app",
+    "GDPR",
+    "open source messenger",
+  ],
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Ephemeral",
+    title: "Ephemeral — messages that leave no trace",
+    description,
+    url: "/",
+    images: ["/icon-512.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Ephemeral — messages that leave no trace",
+    description,
+    images: ["/icon-512.png"],
+  },
 };
 
 export const viewport: Viewport = {
