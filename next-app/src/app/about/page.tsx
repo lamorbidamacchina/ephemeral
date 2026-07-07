@@ -89,6 +89,21 @@ export default function AboutPage() {
           </p>
         </section>
 
+        <section className="space-y-3">
+          <h2 className="text-base font-semibold text-white">Open source</h2>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Ephemeral is open source. Anyone can read the code, verify how it handles
+            messages, and check that it does exactly what we say.
+          </p>
+          <a
+            href="https://github.com/lamorbidamacchina/ephemeral"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-sm text-emerald-500 hover:text-emerald-400 font-medium transition"
+          >
+            View the source on GitHub →
+          </a>
+        </section>
 
       </div>
 
